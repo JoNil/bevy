@@ -191,7 +191,7 @@ impl<T: Event> ApplicationHandler<T> for WinitAppRunnerState<T> {
             mut window_scale_factor_changed,
             winit_windows,
             mut windows,
-            mut access_kit_adapters,
+            mut _access_kit_adapters,
         ) = self.event_writer_system_state.get_mut(self.app.world_mut());
 
         let Some(window) = winit_windows.get_window_entity(window_id) else {
@@ -206,11 +206,11 @@ impl<T: Event> ApplicationHandler<T> for WinitAppRunnerState<T> {
 
         // Allow AccessKit to respond to `WindowEvent`s before they reach
         // the engine.
-        if let Some(adapter) = access_kit_adapters.get_mut(&window) {
-            if let Some(winit_window) = winit_windows.get_window(window) {
-                adapter.process_event(winit_window, &event);
-            }
-        }
+        //if let Some(adapter) = access_kit_adapters.get_mut(&window) {
+        //    if let Some(winit_window) = winit_windows.get_window(window) {
+        //        adapter.process_event(winit_window, &event);
+        //    }
+        //}
 
         match event {
             WindowEvent::Resized(size) => {

@@ -12,7 +12,7 @@ keywords = ["bevy"]
 trace = []
 wayland = ["winit/wayland", "winit/wayland-csd-adwaita"]
 x11 = ["winit/x11"]
-accesskit_unix = ["accesskit_winit/accesskit_unix", "accesskit_winit/async-io"]
+accesskit_unix = []
 serialize = ["serde", "bevy_input/serialize", "bevy_window/serialize"]
 
 [dependencies]
@@ -33,9 +33,9 @@ bevy_tasks = { path = "../bevy_tasks", version = "0.14.2" }
 # other
 # feature rwh_06 refers to window_raw_handle@v0.6
 winit = { version = "0.30", default-features = false, features = ["rwh_06"] }
-accesskit_winit = { version = "0.20", default-features = false, features = [
-  "rwh_06",
-] }
+#accesskit_winit = { version = "0.20", default-features = false, features = [
+#  "rwh_06",
+#] }
 approx = { version = "0.5", default-features = false }
 cfg-if = "1.0"
 raw-window-handle = "0.6"
