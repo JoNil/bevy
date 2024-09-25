@@ -72,7 +72,7 @@ codespan-reporting = "0.11.0"
 # and Bevy instead wraps `wgpu` types to verify they are not used off their origin thread.
 wgpu = { version = "0.20", default-features = false, features = [
   "wgsl",
-  "dx12",
+  #"dx12",
   "metal",
   "naga",
   "naga-ir",
